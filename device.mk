@@ -295,6 +295,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshims_ims
 
+# Thermal
+PRODUCT_PACKAGES += \
+    thermal.msm8996
+
+
 # WiFi
 PRODUCT_PACKAGES += \
     libwpa_client \
