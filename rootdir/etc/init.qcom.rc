@@ -558,7 +558,7 @@ on property:wc_transport.start_hci=false
 service start_hci_filter /system/bin/wcnss_filter
     class late_start
     user bluetooth
-    group bluetooth diag
+    group bluetooth oem_2950
     disabled
 
 on property:wc_transport.start_root=true
@@ -589,7 +589,7 @@ service ipacm-diag /system/bin/ipacm-diag
     class main
     user system
     socket ipacm_log_file dgram 660 system net_admin
-    group net_admin diag
+    group net_admin oem_2950
 
 service ipacm /system/bin/ipacm
     class main
@@ -733,13 +733,13 @@ on property:sys.shutdown.requested=*
 service readfem /system/bin/readfem
     class main
     user root
-    group root diag
+    group root oem_2950
     oneshot
 
 service readmac /system/bin/readmac
     class main
     user root
-    group root diag
+    group root oem_2950
     oneshot
 
 service thermal-engine /system/vendor/bin/thermal-engine
