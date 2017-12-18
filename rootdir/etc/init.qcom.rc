@@ -437,6 +437,7 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     rm /data/system/perfd/default_values
     chmod 2770 /data/system/perfd
+    start perfd
 
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
@@ -676,6 +677,14 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
     user radio
     group radio cache inet misc audio log readproc wakelock
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+
+service perfd /system/vendor/bin/perfd
+   class main
+   user root
+   group root system
+   writepid /dev/cpuset/system-background/tasks
+   # will be started init init.qcom.power.rc
+   disabled
 
 service qseecomd /system/bin/qseecomd
     class core
