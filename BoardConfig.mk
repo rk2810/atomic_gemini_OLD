@@ -125,6 +125,14 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 TARGET_USES_INTERACTION_BOOST := true
 
+# Dex
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT ?= true
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
+
 # Display
 USE_DEVICE_SPECIFIC_DISPLAY := true
 DEVICE_SPECIFIC_DISPLAY_PATH := hardware/qcom/display/msm8996
