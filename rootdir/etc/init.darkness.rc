@@ -52,7 +52,7 @@ on darkness
                 write /sys/devices/system/cpu/cpu0/cpufreq/darkness/fastlane 0
                 write /sys/devices/system/cpu/cpu0/cpufreq/darkness/powersave_bias 1
             # Set Default CPU Governor
-                write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+                write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor darkness
         # Big
             write /sys/devices/system/cpu/cpu2/online 1
             write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
@@ -93,7 +93,7 @@ on darkness
                 write /sys/devices/system/cpu/cpu2/cpufreq/darkness/fastlane 0
                 write /sys/devices/system/cpu/cpu2/cpufreq/darkness/powersave_bias 1
             # Set Default CPU Governor
-                write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+                write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor darkness
     #
     # CPU Scheduler
         chmod 755 /proc/sys/kernel/sched_boost
@@ -198,7 +198,7 @@ on darkness
     #
     # Misc Tweaks
         write /sys/module/workqueue/parameters/power_efficient Y
-        write /sys/module/sync/parameters/fsync_enabled Y
+        write /sys/module/sync/parameters/fsync_enabled N
         write /sys/kernel/fast_charge/force_fast_charge 1
         write /sys/module/qpnp_smbcharger/parameters/fast_charge_max_ma 2400
         write /sys/module/qpnp_smbcharger/parameters/default_fastchg_current_ma 2400
@@ -217,7 +217,7 @@ on darkness
         write /sys/module/scsi_mod/parameters/use_blk_mq Y
     #
     # Set Hostname
-        setprop net.hostname Darkness
+        setprop net.hostname Darkness-AOS
 
 on property:dev.bootcomplete=1
     trigger darkness
