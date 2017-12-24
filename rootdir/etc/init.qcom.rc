@@ -27,6 +27,7 @@
 
 import init.qcom.power.rc
 import init.darkness.rc
+import init.spectrum.rc
 import init.qcom.usb.rc
 import init.target.rc
 import init.spectrum.rc
