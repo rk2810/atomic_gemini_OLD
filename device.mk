@@ -164,6 +164,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ConfigPanel \
 
+# Darkness
+PRODUCT_PACKAGES += \
+    init.darkness.rc \
+    init.spectrum.rc \
+    init.spectrum.sh
+
 # Default permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/privapp-permissions-gemini.xml:system/etc/permissions/privapp-permissions-gemini.xml
