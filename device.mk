@@ -156,6 +156,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8996
+
 # ConfigPanel
 PRODUCT_PACKAGES += \
     ConfigPanel \
