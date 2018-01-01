@@ -117,7 +117,7 @@
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
     <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">3000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">2000</integer>
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
@@ -291,6 +291,9 @@
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
+    <!-- Boolean indicating whether Hotspot 2.0/Passpoint and ANQP queries is enabled -->
+    <!--bool translatable="false" name="config_wifi_hotspot2_enabled">true</bool-->
+
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
@@ -391,7 +394,7 @@
     <integer name="config_screenBrightnessDoze">17</integer>
 
     <!-- Whether device supports double tap to wake -->
-    <bool name="config_supportDoubleTapWake">false</bool>
+    <!--bool name="config_supportDoubleTapWake">true</bool-->
 
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
@@ -469,8 +472,21 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-     <integer name="config_deviceHardwareKeys">87</integer> 
+<!--     <integer name="config_deviceHardwareKeys">83</integer> -->
 
+    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+<!--     <integer name="config_deviceHardwareWakeKeys">65</integer> -->
 
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
@@ -496,6 +512,13 @@
     -->
 <!--     <integer name="config_longPressOnAppSwitchBehavior">1</integer> -->
 
+    <!-- The list absolute paths of jar/apk files containing the device specific handlers,
+         delimited by File.pathSeparator, which defaults to ":" on Android -->
+    <string name="config_deviceKeyHandlerLib" translatable="false">/system/priv-app/ConfigPanel/ConfigPanel.apk</string>
+
+    <!-- Full qualified name of the class that implements
+         com.android.internal.os.DeviceKeyHandler interface. -->
+    <string name="config_deviceKeyHandlerClass" translatable="false">com.cyanogenmod.settings.device.KeyHandler</string>
 
     <!-- Operating volatage for bluetooth controller. 0 by default-->
     <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
@@ -530,10 +553,7 @@
          Otherwise, the buttons will light up whenever the user interacts with the device -->
 <!--     <bool name="config_buttonLightOnKeypressOnly">true</bool> -->
 
-
     <!-- True if camera app should be pinned via Pinner Service -->
     <bool name="config_pinnerCameraApp">true</bool>
-
-    <!-- Whether device supports an alt. ambient display -->
-<!--    <bool name="config_alt_ambient_display">true</bool>  -->
 </resources>
+
