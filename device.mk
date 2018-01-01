@@ -344,3 +344,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_height=2048 \
     ro.hwui.text_small_cache_height=2048 \
     ro.hwui.texture_cache_flushrate=0.4
+
+# TFA calibration
+PRODUCT_PACKAGES += \
+    init.tfa.sh \
+    tinyplay
