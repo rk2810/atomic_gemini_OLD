@@ -144,6 +144,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.diag.rc \
     ueventd.qcom.rc \
     init.qcom.sh \
+    init.darkness.rc \
     init.spectrum.rc \
     init.spectrum.sh
 
