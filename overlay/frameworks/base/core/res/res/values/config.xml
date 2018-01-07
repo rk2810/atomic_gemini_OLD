@@ -555,5 +555,9 @@
 
     <!-- True if camera app should be pinned via Pinner Service -->
     <bool name="config_pinnerCameraApp">true</bool>
+
+    <!--bool for backlight options-->
+    <bool name="config_deviceHasButtonBacklight">true</bool>
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
 </resources>
 
