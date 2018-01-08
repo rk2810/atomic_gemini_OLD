@@ -47,8 +47,6 @@ on early-init
     write /proc/sys/vm/page-cluster 0
 
 on init
-    export LD_SHIM_LIBS /system/vendor/lib64/lib-imsvt.so|libshims_ims.so:/system/vendor/lib64/libril-qc-qmi-1.so|rild_socket.so
-
     # Set permissions for persist partition
     mkdir /persist 0771 root system
 
@@ -519,7 +517,7 @@ on property:sys.shutdown.requested=*
 service loc_launcher /system/vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet oem_2950 wifi
+    group gps inet diag wifi
     writepid /dev/cpuset/system-background/tasks
 
 service qcom-sh /system/bin/init.qcom.sh
