@@ -227,4 +227,4 @@ dalvik.vm.image-dex2oat-threads=4
 debug.generate-debug-info=false
 
 # Maintainer prop
-ro.aos.maintainer=RohanK
+ro.aos.maintainer=RohanK & Krzysztof Geralt
