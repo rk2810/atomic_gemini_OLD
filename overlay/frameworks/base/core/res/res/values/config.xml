@@ -557,7 +557,6 @@
     <bool name="config_pinnerCameraApp">true</bool>
 
     <!--bool for backlight options-->
-    <bool name="config_deviceHasButtonBacklight">true</bool>
-    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+    <bool name="config_button_brightness_support">true</bool>
 </resources>
 
