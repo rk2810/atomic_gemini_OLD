@@ -245,3 +245,6 @@ debug.generate-debug-info=false
 
 # Maintainer prop
 ro.aos.maintainer=RohanK & Krzysztof Geralt
+
+# Use FIFO UI Scheduling
+sys.use_fifo_ui=1
